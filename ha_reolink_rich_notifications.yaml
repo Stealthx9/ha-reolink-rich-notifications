@@ -116,8 +116,8 @@ action:
               priority: high
               actions:
                 - action: "VIEW_IMAGE"
-                  title: "View Snapshot"
-                  uri: "/media/local/{{ image_file }}"
+                  title: "View All Snapshots"
+                  uri: "/media-browser/browser/app%2Cmedia-source%3A%2F%2Fmedia_source/%2Cmedia-source%3A%2F%2Fmedia_source%2Flocal%2Freolink_rich_notifications"
                   uri_package: "io.homeassistant.companion.android"
                 - action: "OPEN_REOLINK"
                   title: "Open Reolink App"
