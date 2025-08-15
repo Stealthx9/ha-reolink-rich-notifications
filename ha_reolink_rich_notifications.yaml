@@ -123,6 +123,4 @@ action:
                   title: "Open Reolink App"
                   uri: "app://com.mcu.reolink"
                   uri_package: "com.mcu.reolink"
-              # Optionally still provide a default tap action:
-              clickAction: "/media/local/{{ image_file }}"
-              url: "/media/local/{{ image_file }}"
+
