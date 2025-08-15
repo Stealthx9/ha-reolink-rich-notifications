@@ -107,12 +107,22 @@ action:
       sequence:
         - service: "notify.mobile_app_{{ device_attr(repeat.item, 'name') | slugify }}"
           data:
-            title: "{{ trigger.from_state.attributes.friendly_name }}"
-            message: ""
-            data:
-              tag: "{{ trigger.to_state.context.id }}"
-              image: "/media/local/{{ image_file }}"
-              ttl: 0
-              priority: high
-              url: "app://com.mcu.reolink"
-              clickAction: "app://com.mcu.reolink"
+          title: "{{ trigger.from_state.attributes.friendly_name }}"
+          message: ""
+          data:
+            tag: "{{ trigger.to_state.context.id }}"
+            image: "/media/local/{{ image_file }}"
+            ttl: 0
+            priority: high
+            actions:
+              - action: "VIEW_IMAGE"
+                title: "View Snapshot"
+                uri: "/media/local/{{ image_file }}"
+                uri_package: "io.homeassistant.companion.android"
+              - action: "OPEN_REOLINK"
+                title: "Open Reolink App"
+                uri: "app://com.mcu.reolink"
+                uri_package: "com.mcu.reolink"
+            # Optionally still provide a default tap action:
+            clickAction: "/media/local/{{ image_file }}"
+            url: "/media/local/{{ image_file }}"
